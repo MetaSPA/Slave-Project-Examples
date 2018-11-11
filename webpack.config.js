@@ -1,8 +1,5 @@
 const path = require("path");
-const HTMLPlugin = require("html-webpack-plugin");
-const webpack = require("webpack");
 // const OfflinePlugin = require('offline-plugin')
-const nodeExternals = require("webpack-node-externals");
 const MetaSPAPlugin = require("@metaspa/meta-spa-webpack-plugin");
 
 const timeStamp = new Date().getTime();
@@ -76,15 +73,6 @@ module.exports = {
         },
         disableHostCheck: true,
         compress: true,
-        // proxy: {
-        //     "/api": {
-        //         // target: 'https://yapi.advai.net/mock/198/',
-        //         target: "https://eboss.kreditpintar.net/",
-        //         changeOrigin: true,
-        //         secure: false,
-        //         xfwd: false,
-        //     },
-        // },
     },
     plugins: [
         new MetaSPAPlugin({
