@@ -1,0 +1,27 @@
+{
+  "name": "test-vue-lib",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build --mode development",
+    "build:lib": "vue-cli-service build --mode development --target lib src/main.ts",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "vue": "^2.5.17",
+    "vue-class-component": "^6.0.0",
+    "vue-property-decorator": "^7.0.0",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@babel/runtime-corejs2": "^7.1.5",
+    "@metaspa/meta-spa-webpack-plugin": "0.0.3",
+    "@vue/cli-plugin-babel": "^3.1.1",
+    "@vue/cli-plugin-typescript": "^3.1.1",
+    "@vue/cli-service": "^3.1.1",
+    "typescript": "^3.0.0",
+    "vue-template-compiler": "^2.5.17"
+  }
+}
