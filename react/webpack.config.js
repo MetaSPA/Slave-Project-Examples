@@ -1,6 +1,7 @@
 const path = require("path");
 // const OfflinePlugin = require('offline-plugin')
-const MetaSPAPlugin = require("@metaspa/meta-spa-webpack-plugin");
+const MetaSPAPlugin = require("@metaspa/meta-spa-webpack-plugin").default;
+const ManifestPlugin = require('webpack-manifest-plugin')
 
 const timeStamp = new Date().getTime();
 
@@ -11,7 +12,7 @@ module.exports = {
     output: {
         filename: `[name].js`,
         path: path.resolve(__dirname, "dist/public"),
-        publicPath: "/public/",
+        publicPath: "/react/public/",
     },
     mode: "development",
     context: path.resolve(__dirname, "src"),
@@ -51,7 +52,7 @@ module.exports = {
         host: "0.0.0.0",
         port: 3100,
         contentBase: path.resolve(__dirname, "dist/public"),
-        publicPath: "/public",
+        publicPath: "/react/public/",
         headers: {
             "Service-Worker-Allowed": "/",
         },
@@ -75,6 +76,9 @@ module.exports = {
         compress: true,
     },
     plugins: [
+        new ManifestPlugin({
+            filter: options => options.name === 'bundle.js' || options.name === 'vendor.js'
+        }),
         new MetaSPAPlugin({
             namespace: "TestReact",
             provide: [

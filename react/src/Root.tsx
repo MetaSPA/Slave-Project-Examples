@@ -1,4 +1,5 @@
 import * as React from "react";
+import { bootstrap } from "@metaspa/module";
 
 class Root extends React.Component<{}, { root2: any }> {
     constructor(props: {}) {
@@ -26,4 +27,4 @@ class Root extends React.Component<{}, { root2: any }> {
     }
 }
 
-export default Root;
+bootstrap({ namespace: "TestReact", modules: Root });
