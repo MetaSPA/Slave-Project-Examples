@@ -2,14 +2,10 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
+import { bootstrap } from '@metaspa/module';
 
 Vue.config.productionTip = false;
-
-// const vue = new Vue({
-//     router,
-//     store,
-//     render: (h) => h(App),
-// });
-
-// export default vue;
-export {App, router, store};
+bootstrap({
+    namespace: 'TestVue',
+    modules: {App, router, store},
+});
